@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AlliancesRouteImport } from './routes/alliances'
+import { Route as ChannelProgramsRouteImport } from './routes/channel-programs'
+import { Route as SoteriaRouteImport } from './routes/soteria'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlliancesRoute = AlliancesRouteImport.update({
+  id: '/alliances',
+  path: '/alliances',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChannelProgramsRoute = ChannelProgramsRouteImport.update({
+  id: '/channel-programs',
+  path: '/channel-programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoteriaRoute = SoteriaRouteImport.update({
+  id: '/soteria',
+  path: '/soteria',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alliances': typeof AlliancesRoute
+  '/channel-programs': typeof ChannelProgramsRoute
+  '/soteria': typeof SoteriaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alliances': typeof AlliancesRoute
+  '/channel-programs': typeof ChannelProgramsRoute
+  '/soteria': typeof SoteriaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alliances': typeof AlliancesRoute
+  '/channel-programs': typeof ChannelProgramsRoute
+  '/soteria': typeof SoteriaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/alliances' | '/channel-programs' | '/soteria'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/alliances' | '/channel-programs' | '/soteria'
+  id: '__root__' | '/' | '/alliances' | '/channel-programs' | '/soteria'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlliancesRoute: typeof AlliancesRoute
+  ChannelProgramsRoute: typeof ChannelProgramsRoute
+  SoteriaRoute: typeof SoteriaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alliances': {
+      id: '/alliances'
+      path: '/alliances'
+      fullPath: '/alliances'
+      preLoaderRoute: typeof AlliancesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/channel-programs': {
+      id: '/channel-programs'
+      path: '/channel-programs'
+      fullPath: '/channel-programs'
+      preLoaderRoute: typeof ChannelProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/soteria': {
+      id: '/soteria'
+      path: '/soteria'
+      fullPath: '/soteria'
+      preLoaderRoute: typeof SoteriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlliancesRoute: AlliancesRoute,
+  ChannelProgramsRoute: ChannelProgramsRoute,
+  SoteriaRoute: SoteriaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
