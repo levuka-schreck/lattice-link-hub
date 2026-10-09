@@ -2,7 +2,7 @@ import { Link } from '@tanstack/react-router';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { SiteHeader, SiteFooter, ContactBand, ContactButton } from '@/components/site-shell';
 import { services } from '@/lib/services';
-import airlock from '@/assets/soteria-airlock.png.asset.json';
+import airlock from '@/assets/soteria-airlock.png';
 
 export function ServicePage({ service }: { service: keyof typeof services }) {
   const data = services[service];
