@@ -3,7 +3,7 @@ import { ArrowRight, Building2, Landmark, Network, ShieldCheck, Handshake, Check
 import { Button } from '@/components/ui/button';
 import { SiteHeader, SiteFooter, ContactBand, ContactButton } from '@/components/site-shell';
 import graphene from '@/assets/graphene-lattice.jpg';
-import airlock from '@/assets/soteria-airlock.png.asset.json';
+import airlock from '@/assets/soteria-airlock.png';
 
 export const Route = createFileRoute('/')({ head: () => ({ meta: [{ title: 'Grafinate Partners | Technology. Trust. Together.' }, { name: 'description', content: 'Grafinate Partners connects technology channel programs, Soteria governance, and technical alliances with enterprise, financial services, and government opportunity.' }, { property: 'og:title', content: 'Grafinate Partners | Technology. Trust. Together.' }, { property: 'og:description', content: 'A stronger foundation for enterprise growth through technology channels, verifiable governance, and strategic alliances.' }, { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' }] }), component: Index });
 
