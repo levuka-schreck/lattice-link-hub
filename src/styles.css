@@ -208,4 +208,73 @@ a:focus-visible { outline: 2px solid var(--ring); outline-offset: 5px; }
 .section { padding-block: 56px; } .section-heading { display: block; margin-bottom: 28px; } .section h2 { font-size: 29px; } .section-intro { margin-top: 20px; } .service-grid, .product-grid, .about-grid { grid-template-columns: 1fr; } .service-card { min-height: 285px; padding: 25px; } .service-card h3 { font-size: 19px; } .service-card-top { margin-bottom: 20px; } .product-grid { gap: 38px; } .market-grid { gap: 30px 22px; } .market-item > svg { margin-bottom: 16px; } .about-grid { gap: 25px; } .contact-band h2 { font-size: 30px; } .contact-inner { display: block; } .contact-band .contact-cta { margin-top: 26px; } .footer-inner { flex-wrap: wrap; } .footer-note { width: 100%; order: 3; } .detail-hero { padding-block: 45px 55px; } .detail-hero h1 { font-size: 36px; overflow-wrap: anywhere; }
 }
 @media (max-width: 400px) { .market-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 36px; } .hero-line { font-size: 27px; } .hero .eyebrow { font-size: 10px; } }
+.soteria-hero h1 { margin-bottom: 15px; }
+.soteria-hero .soteria-headline { font-size: 36px; line-height: 1.35; color: var(--primary); margin-bottom: 24px; }
+.soteria-overview { display: flex; flex-wrap: wrap; gap: 25px 40px; border-top: 1px solid var(--border); padding-top: 28px; margin-top: 45px; }
+.soteria-overview span { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; }
+.soteria-overview svg { width: 19px; color: var(--blue); }
+.product-nav { border-bottom: 1px solid var(--border); }
+.product-nav > div { display: flex; flex-wrap: wrap; gap: 18px 35px; padding-block: 22px; }
+.product-nav a { color: var(--muted-foreground); font-size: 12px; text-decoration: none; font-weight: 600; }
+.product-nav a:hover { color: var(--primary); }
+.flow-tabs { display: flex; gap: 8px; margin-bottom: 28px; }
+.flow-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; list-style: none; padding: 0; }
+.flow-step { position: relative; border: 1px solid var(--border); border-top: 3px solid var(--blue); background: var(--card); border-radius: 4px; padding: 22px; }
+.flow-planned { border-style: dashed; background: var(--secondary); }
+.flow-index { display: flex; align-items: center; justify-content: space-between; color: var(--primary); font-size: 12px; font-weight: 650; margin-bottom: 20px; }
+.flow-index span { color: var(--muted-foreground); font-size: 10px; }
+.flow-step h3, .storage-boundary h3, .validation-diagram h3, .governance-flow h3, .status-grid h3 { font-size: 17px; line-height: 1.5; font-weight: 650; margin-bottom: 12px; }
+.flow-step p, .storage-boundary p, .validation-diagram p, .governance-flow p, .status-grid p { font-size: 12px; line-height: 1.85; color: var(--muted-foreground); }
+.flow-arrow { position: absolute; right: -25px; top: 50%; color: var(--blue); }
+.flow-summary { display: flex; align-items: flex-start; gap: 14px; background: var(--secondary); border-left: 3px solid var(--blue); padding: 20px 24px; margin-top: 26px; }
+.flow-summary svg { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+.flow-summary p { font-size: 12px; line-height: 1.85; color: var(--muted-foreground); }
+.storage-boundary { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; margin-top: 38px; }
+.storage-boundary > div { padding-top: 24px; border-top: 1px solid var(--border); }
+.storage-boundary h3 { margin-top: 13px; }
+.architecture-note { font-size: 11px; color: var(--muted-foreground); line-height: 1.85; margin-top: 24px; max-width: 950px; }
+.validation-diagram { display: grid; grid-template-columns: 1fr 2.1fr 1fr; align-items: center; gap: 40px; }
+.validation-input, .validation-output { position: relative; padding-block: 25px; }
+.validation-input > svg, .validation-output > svg { color: var(--blue); margin-bottom: 18px; }
+.validation-input::after, .validation-output::before { content: '→'; position: absolute; color: var(--blue); font-size: 25px; top: 48%; }
+.validation-input::after { right: -30px; }
+.validation-output::before { left: -30px; }
+.validation-layers { display: grid; gap: 14px; }
+.validation-layer { display: flex; gap: 16px; padding: 23px; border: 1px solid var(--border); border-left: 3px solid var(--blue); border-radius: 4px; background: var(--card); }
+.validation-number { font-size: 11px; color: var(--blue); font-weight: 650; padding-top: 5px; }
+.validation-layer h3 { margin-bottom: 3px; }
+.validation-layer .validation-question { color: var(--primary); font-weight: 600; margin-bottom: 10px; }
+.validation-diagram strong { display: block; font-size: 11px; color: var(--primary); font-weight: 650; line-height: 1.8; margin-top: 12px; }
+.validation-diagram figcaption { grid-column: 1 / -1; text-align: center; font-size: 11px; color: var(--muted-foreground); }
+.governance-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 0; list-style: none; }
+.governance-flow li { border-top: 2px solid var(--blue); padding-top: 22px; }
+.governance-flow li > span { font-size: 11px; color: var(--primary); font-weight: 650; display: block; margin-bottom: 17px; }
+.governance-principles { display: flex; flex-wrap: wrap; gap: 20px 30px; border-top: 1px solid var(--border); padding-top: 28px; margin-top: 32px; }
+.governance-principles span { display: flex; gap: 10px; align-items: center; font-size: 11px; color: var(--muted-foreground); }
+.governance-principles svg { color: var(--primary); }
+.evidence-formats { display: flex; flex-wrap: wrap; gap: 15px 30px; font-size: 12px; font-weight: 650; color: var(--primary); margin-bottom: 28px; }
+.evidence-table { width: 100%; border-collapse: collapse; text-align: left; }
+.evidence-table thead th { font-size: 11px; font-weight: 650; color: var(--muted-foreground); padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.evidence-table tbody th, .evidence-table td { padding: 23px 20px; font-size: 12px; line-height: 1.85; border-bottom: 1px solid var(--border); vertical-align: top; }
+.evidence-table tbody th { font-weight: 650; width: 29%; }
+.evidence-table tbody th > span { color: var(--blue); margin-right: 12px; }
+.evidence-table th small { display: block; margin-top: 4px; font-size: 10px; font-weight: 500; color: var(--muted-foreground); }
+.evidence-table td { color: var(--muted-foreground); }
+.evidence-table td:last-child { width: 29%; }
+.behavior-list details { border-bottom: 1px solid var(--border); }
+.behavior-list details:first-child { border-top: 1px solid var(--border); }
+.behavior-list summary { cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-block: 24px; font-size: 14px; font-weight: 600; list-style: none; }
+.behavior-list summary::-webkit-details-marker { display: none; }
+.behavior-list summary svg { color: var(--blue); flex-shrink: 0; }
+.behavior-list details[open] summary svg { transform: rotate(180deg); }
+.behavior-list details p { font-size: 13px; color: var(--muted-foreground); line-height: 1.9; padding-bottom: 25px; max-width: 850px; }
+.status-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
+.status-grid article { border-top: 1px solid var(--border); padding-top: 22px; }
+.status-grid h3 { margin-top: 16px; }
+.soteria-interface { margin-top: 48px; max-width: 950px; }
+.interface-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+.interface-heading h3 { font-size: 15px; font-weight: 600; }
+.interface-heading span { font-size: 11px; color: var(--muted-foreground); }
+@media (max-width: 1000px) { .flow-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .flow-step:nth-child(2) .flow-arrow { display: none; } .validation-diagram { grid-template-columns: 1fr; gap: 24px; } .validation-input, .validation-output { padding: 0 0 28px; } .validation-input::after, .validation-output::before { content: '↓'; top: auto; bottom: -7px; left: 0; right: auto; } .validation-output { padding-top: 22px; padding-bottom: 0; } .validation-output::before { top: -20px; bottom: auto; } }
+@media (max-width: 760px) { .soteria-hero .soteria-headline { font-size: 28px; } .soteria-overview { display: grid; gap: 18px; margin-top: 35px; } .flow-steps, .storage-boundary, .governance-flow, .status-grid { grid-template-columns: 1fr; } .flow-steps { gap: 30px; } .flow-arrow, .flow-step:nth-child(2) .flow-arrow { display: block; top: auto; bottom: -27px; right: auto; left: 22px; transform: rotate(90deg); } .flow-tabs { gap: 4px; } .flow-tabs > button { font-size: 11px; padding-inline: 10px; } .storage-boundary { gap: 25px; } .validation-layer { padding: 20px 16px; gap: 12px; } .governance-flow, .status-grid { gap: 28px; } .evidence-table thead { display: none; } .evidence-table, .evidence-table tbody, .evidence-table tr, .evidence-table tbody th, .evidence-table td { display: block; width: 100%; } .evidence-table tr { padding-block: 20px; border-top: 1px solid var(--border); } .evidence-table tbody th, .evidence-table td { padding: 0 0 12px; border: 0; } .evidence-table td:last-child { width: 100%; padding: 0; } .evidence-table td:last-child::before { content: 'Requires: '; color: var(--primary); font-weight: 600; } .validation-diagram figcaption { text-align: left; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
