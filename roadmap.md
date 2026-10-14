@@ -7,3 +7,4 @@
 - [x] Verify the redesigned pages, product images, navigation, and inquiry download.
 - [ ] Distill the Soteria architecture presentation into a product page with themed data-flow, verification, governance, and evidence diagrams.
 - [ ] Verify Soteria page navigation, interactions, diagram readability, and product imagery.
+- [ ] Expand the PDF-based diagrams to show system ingress, the full write path, Airlock branching, and evidence issuance.
