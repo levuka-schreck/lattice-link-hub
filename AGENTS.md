@@ -15,4 +15,4 @@
 - Until a verified contact destination is supplied, the inquiry form only downloads a local brief and explicitly states that it does not send data.
 - Bundle website and product imagery as local asset imports so deployment does not depend on a hosting-specific asset pointer.
 - Apply the enterprise visual system through shared global semantic tokens and shared site components so every leaf page inherits the same presentation.
-- Keep Soteria's product narrative in a dedicated browser-safe module and render diagrams as responsive semantic HTML; this keeps technical explanations accessible and independent of the source presentation.
+- Keep Soteria's narrative browser-safe and its detailed flow diagrams in a dedicated semantic-HTML component module with shared node and connector primitives; this keeps PDF-derived flows accessible, consistently themed, and readable at small widths.
