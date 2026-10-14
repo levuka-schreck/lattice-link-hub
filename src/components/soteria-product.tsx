@@ -1,20 +1,13 @@
-import { useState } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowLeft, ArrowRight, ArrowDown, Database, FileCheck2, Fingerprint, ShieldCheck, Network, ChevronDown } from 'lucide-react';
+import { ArrowLeft, ArrowDown, Database, FileCheck2, Fingerprint, ShieldCheck, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SiteHeader, SiteFooter, ContactBand, ContactButton } from '@/components/site-shell';
-import { eventFlow, intakeFlow, verificationLayers, evidenceTiers, failureBehaviors } from '@/lib/soteria-product';
+import { verificationLayers, evidenceTiers, failureBehaviors } from '@/lib/soteria-product';
 import airlock from '@/assets/soteria-airlock.png';
 import { SoteriaSystemMap, SoteriaWritePath, SoteriaAirlockPath, SoteriaReadPath, SoteriaEvidencePath } from '@/components/soteria-flow-diagrams';
 
 function SectionHeading({ number, label, title, text }: { number: string; label: string; title: string; text: string }) {
   return <div className="section-heading"><div><div className="eyebrow">{number} / {label}</div><h2>{title}</h2></div><p className="section-intro">{text}</p></div>;
-}
-
-function DataFlow() {
-  const [path, setPath] = useState<'events' | 'airlock'>('events');
-  const steps = path === 'events' ? eventFlow : intakeFlow;
-  return <><div className="flow-tabs" role="tablist" aria-label="Data flow"><Button id="events-tab" role="tab" aria-selected={path === 'events'} aria-controls="data-flow-panel" variant={path === 'events' ? 'enterprise' : 'ghost'} onClick={() => setPath('events')}><Network size={16} />Application events</Button><Button id="airlock-tab" role="tab" aria-selected={path === 'airlock'} aria-controls="data-flow-panel" variant={path === 'airlock' ? 'enterprise' : 'ghost'} onClick={() => setPath('airlock')}><Fingerprint size={16} />Airlock intake</Button></div><div role="tabpanel" id="data-flow-panel" aria-labelledby={`${path}-tab`} tabIndex={0}><ol className="flow-steps">{steps.map((step, index) => <li className={`flow-step ${'planned' in step ? 'flow-planned' : ''}`} key={step.title}><span className="flow-index">0{index + 1}{'planned' in step && <span>Planned</span>}</span><h3>{step.title}</h3><p>{step.text}</p>{index < steps.length - 1 && <ArrowRight className="flow-arrow" size={20} aria-hidden="true" />}</li>)}</ol><div className="flow-summary"><FileCheck2 size={20} /><p>{path === 'events' ? 'One committed stream. Separate ledger copies, witness checkpoints, and query models all trace back to the same event.' : 'One custody thread. Signed intake events link receipt, classification, and containment by content hash. Matched sensitive values are masked; classification—not those values—is recorded on the ledger.'}</p></div></div></>;
 }
 
 export function SoteriaProduct() {
